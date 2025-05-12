@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ais_msgs;
+
+/// Location metadata about positioning system
+enum PositioningSystemMeta {
+  PSM_Operative = 0; // When timestamp second is 0-59
+  PSM_ManualInputMode = 1;
+  PSM_DeadReckoningMode = 2;
+  PSM_Inoperative = 3;
+}

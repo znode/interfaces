@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package sensor_msgs;
+
+// Navigation Satellite fix status for any Global Navigation Satellite System.
+//
+// Whether to output an augmented fix is determined by both the fix
+// type and the last time differential corrections were received.  A
+// fix is valid when status >= STATUS_FIX.
+
+message NavSatStatus {
+  enum Status {
+    NO_FIX = 0;   // unable to fix position
+    FIX = 1;      // unaugmented fix
+    SBAS_FIX = 2; // with satellite-based augmentation
+    GBAS_FIX = 3; // with ground-based augmentation
+  }
+
+  Status status = 1;
+
+  // Bits defining which Global Navigation Satellite System signals were used by
+  // the receiver.
+
+  enum Service {
+    GPS = 0;
+    GLONASS = 1;
+    COMPASS = 2;
+    GALILEO = 3;
+    BEIDOU = 4;
+  }
+
+  Service service = 2;
+}

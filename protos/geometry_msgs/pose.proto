@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package geometry_msgs;
+
+import "geometry_msgs/point.proto";
+import "geometry_msgs/quaternion.proto";
+
+message Pose {
+  geometry_msgs.Point position = 1;
+  geometry_msgs.Quaternion orientation = 2;
+}

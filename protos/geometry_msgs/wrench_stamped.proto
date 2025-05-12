@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package geometry_msgs;
+
+import "std_msgs/header.proto";
+import "geometry_msgs/wrench.proto";
+
+// A wrench with reference coordinate frame and timestamp
+message WrenchStamped {
+  std_msgs.Header header = 1;
+  Wrench wrench = 2;
+}

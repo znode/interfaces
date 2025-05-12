@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+package ais_msgs;
+
+import "std_msgs/header.proto";
+import "ais_msgs/ais_class.proto";
+import "ais_msgs/station.proto";
+import "ais_msgs/navigation_status.proto";
+import "ais_msgs/rot_direction.proto";
+import "ais_msgs/positioning_system_meta.proto";
+
+/// Types 1, 2, 3 and 18: Position Report Class A, and Long Range AIS Broadcast
+/// message
+message VesselDynamicData {
+  std_msgs.Header header = 1;
+
+  /// True if the data is about own vessel, false if about other.
+  bool own_vessel = 2;
+
+  /// AIS station type.
+  Station station = 3;
+
+  /// Class A or Class B
+  AisClass ais_type = 4;
+
+  /// User ID (30 bits)
+  uint32 mmsi = 5;
+
+  /// Navigation status
+  NavigationStatus nav_status = 6;
+
+  /// Accurate ROT_sensor (±0..708°/min) if available.
+  double rot = 7;
+
+  /// ROT direction when turn is more than 5°/30s.
+  RotDirection rot_direction = 8;
+
+  /// Speed over ground in knots
+  double sog_knots = 9;
+
+  /// Position accuracy: true = high (<= 10 m), false = low (> 10 m)
+  bool high_position_accuracy = 10;
+
+  /// Latitude
+  double latitude = 11;
+
+  /// Longitude
+  double longitude = 12;
+
+  /// Course over ground
+  double cog = 13;
+
+  /// True heading (0-359)
+  double heading_true = 14;
+
+  /// Derived from UTC second (6 bits)
+  uint64 timestamp_seconds = 15;
+
+  /// Positioning system metadata (included in seconds in UTC timestamp)
+  PositioningSystemMeta positioning_system_meta = 16;
+
+  /// GNSS position status (Type 27):
+  ///  true = current GNSS position
+  ///  false = not GNSS position
+  bool current_gnss_position = 17;
+
+  /// Special manoeuvre indicator. false = not engaged in special manoeuvre,
+  /// true = engaged in special manouvre.
+  bool special_manoeuvre = 18;
+
+  /// Riverine And Inland Navigation systems blue sign:
+  /// RAIM (Receiver autonomous integrity monitoring) flag of electronic
+  /// position fixing device; false = RAIM not in use = default; true = RAIM
+  /// in use
+  bool raim_flag = 19;
+
+  /// Class B unit flag: false = Class B SOTDMA unit, true = Class B "CS"
+  /// unit.
+  bool class_b_unit_flag = 20;
+
+  /// Class B display:
+  /// false = No display available; not capable of displaying Message 12 and
+  /// 14 true  = Equipped with integrated display displaying Message 12 and
+  /// 14
+  bool class_b_display = 21;
+
+  /// Class B DSC:
+  /// false = Not equipped with DSC function
+  /// true  = Equipped with DSC function (dedicated or time-shared
+  bool class_b_dsc = 22;
+
+  /// Class B band flag:
+  /// false = Capable of operating over the upper 525 kHz band of the marine
+  /// band true  = Capable of operating over the whole marine band
+  /// (irrelevant if
+  ///         “Class B Message 22 flag” is 0)
+  bool class_b_band_flag = 23;
+
+  /// Class B Message 22 flag:
+  /// false = No frequency management via Message 22 , operating on AIS1,
+  /// AIS2 only true  = Frequency management via Message 22
+  bool class_b_msg22_flag = 24;
+
+  /// Mode flag:
+  /// false = Station operating in autonomous and continuous mode = default
+  /// true  = Station operating in assigned mode
+  bool class_b_mode_flag = 25;
+
+  /// Communication state selector flag
+  /// false = SOTDMA communication state follows
+  /// true  = ITDMA communication state follows (always “1” for Class-B
+  /// “CS”)
+  bool class_b_css_flag = 26;
+
+  /// Communication state
+  /// Diagnostic information for the radio system.
+  /// <https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.1371-1-200108-S!!PDF-E.pdf>
+  uint32 radio_status = 27;
+}

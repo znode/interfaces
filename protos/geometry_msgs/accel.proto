@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package geometry_msgs;
+
+import "geometry_msgs/vector3.proto";
+
+// This expresses acceleration in free space broken into its linear and angular
+// parts.
+message Accel {
+  Vector3 linear = 1;
+  Vector3 angular = 2;
+}

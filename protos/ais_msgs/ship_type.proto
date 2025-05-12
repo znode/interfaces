@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package ais_msgs;
+
+/// Ship type derived from combined ship and cargo type field
+enum ShipType {
+  ST_NotAvailable = 0;  // 0
+  ST_Reserved1 = 10;    // 1x
+  ST_WingInGround = 20; // 2x
+  ST_Fishing = 30;      // 30
+  ST_Towing = 31;       // 31
+  ST_TowingLong = 32; // 32; Towing: length exceeds 200m or breadth exceeds 25m
+  ST_DredgingOrUnderwaterOps = 33; // 33
+  ST_DivingOps = 34;               // 34
+  ST_MilitaryOps = 35;             // 35
+  ST_Sailing = 36;                 // 36
+  ST_PleasureCraft = 37;           // 37
+  ST_Reserved38 = 38;              // 38
+  ST_Reserved39 = 39;              // 39
+  ST_HighSpeedCraft = 40;          // 4x
+  ST_Pilot = 50;                   // 50
+  ST_SearchAndRescue = 51;         // 51
+  ST_Tug = 52;                     // 52
+  ST_PortTender = 53;              // 53
+  ST_AntiPollutionEquipment = 54;  // 54
+  ST_LawEnforcement = 55;          // 55
+  ST_SpareLocal56 = 56;            // 56
+  ST_SpareLocal57 = 57;            // 57
+  ST_MedicalTransport = 58;        // 58
+  // Noncombatant ship according to RR Resolution No. 18
+  ST_Noncombatant = 59; // 59;
+  ST_Passenger = 60;    // 6x
+  ST_Cargo = 70;        // 7x
+  ST_Tanker = 80;       // 8x
+  ST_Other = 90;        // 9x
+}

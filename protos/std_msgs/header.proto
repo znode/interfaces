@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package std_msgs;
+
+import "std_msgs/time.proto";
+
+// Standard metadata for higher-level stamped data types.
+// This is generally used to communicate timestamped data
+// in a particular coordinate frame.
+
+message Header {
+  // Two-integer timestamp that is expressed as seconds and nanoseconds.
+  Time stamp = 1;
+  // Transform frame with which this data is associated.
+  string frame_id = 2;
+}

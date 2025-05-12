@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package geometry_msgs;
+
+import "geometry_msgs/vector3.proto";
+
+// This expresses velocity in free space broken into its linear and angular
+// parts.
+message Twist {
+  Vector3 linear = 1;
+  Vector3 angular = 2;
+}

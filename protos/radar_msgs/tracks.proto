@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package radar_msgs;
+
+import "std_msgs/header.proto";
+import "radar_msgs/track.proto";
+
+message RadarTracks {
+  std_msgs.Header header = 1;
+  repeated RadarTrack tracks = 2;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package std_msgs;
+
+// A universally unique identifier (UUID).
+//
+//  http://en.wikipedia.org/wiki/Universally_unique_identifier
+//  http://tools.ietf.org/html/rfc4122.html
+//  https://stackoverflow.com/questions/36344826/how-do-i-represent-a-uuid-in-a-protobuf-message
+message UUID {
+  string uuid = 1;
+}

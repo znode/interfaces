@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package std_msgs;
+
+message MultiArrayDimension {
+  string label = 1;  // label of given dimension
+  uint32 size = 2;   // size of given dimension (in type units)
+  uint32 stride = 3; // stride of given dimension
+}

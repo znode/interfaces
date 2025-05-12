@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package nav_msgs;
+
+import "std_msgs/time.proto";
+import "geometry_msgs/pose.proto";
+
+// This hold basic information about the characteristics of the OccupancyGrid
+
+message MapMetaData {
+  // The time at which the map was loaded
+  std_msgs.Time map_load_time = 1;
+
+  // The map resolution [m/cell]
+  float resolution = 2;
+
+  // Map width [cells]
+  uint32 width = 3;
+
+  // Map height [cells]
+  uint32 height = 4;
+
+  // The origin of the map [m, m, rad].  This is the real-world pose of the
+  // bottom left corner of cell (0,0) in the map.
+  geometry_msgs.Pose origin = 5;
+}

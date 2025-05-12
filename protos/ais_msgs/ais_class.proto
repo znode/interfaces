@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ais_msgs;
+
+/// AIS class which is either Class A or Class B
+enum AisClass {
+  /// AIS class not known.
+  Unknown = 0;
+
+  /// AIS class A.
+  ClassA = 1; // Message types 1, 2, 3, 5
+
+  /// AIS class B.
+  ClassB = 2; // Message types 14, 18, 19, 24
+}

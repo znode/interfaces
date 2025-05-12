@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package radar_msgs;
+import "std_msgs/header.proto";
+import "radar_msgs/return.proto";
+
+message RadarScan {
+  std_msgs.Header header = 1;
+  repeated RadarReturn returns = 2;
+}

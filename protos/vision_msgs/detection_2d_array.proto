@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package vision_msgs;
+
+import "std_msgs/header.proto";
+import "vision_msgs/detection_2d.proto";
+
+// A list of 2D detections, for a multi-object 2D detector.
+
+message Detection2DArray {
+  std_msgs.Header header = 1;
+
+  // A list of the detected proposals. A multi-proposal detector might generate
+  //   this list with many candidate detections generated from a single input.
+  repeated Detection2D detections = 2;
+}

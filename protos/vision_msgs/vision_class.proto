@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package vision_msgs;
+
+// A key value pair that maps an integer class_id to a string class label
+//   in computer vision systems.
+
+message VisionClass {
+  // The int value that identifies the class.
+  uint32 class_id = 1;
+
+  // The name of the class represented by the class_id
+  string class_name = 2;
+}

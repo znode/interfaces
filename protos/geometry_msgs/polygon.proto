@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package geometry_msgs;
+
+import "geometry_msgs/point32.proto";
+
+// A specification of a polygon where the first and last points are assumed to
+// be connected
+
+message Polygon { repeated Point32 points = 1; }

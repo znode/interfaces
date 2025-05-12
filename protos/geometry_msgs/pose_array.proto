@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package geometry_msgs;
+
+import "std_msgs/header.proto";
+import "geometry_msgs/pose.proto";
+
+// An array of poses with a header for global reference.
+
+message PoseArray {
+  std_msgs.Header header = 1;
+  repeated Pose poses = 2;
+}

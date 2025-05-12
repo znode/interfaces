@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package ais_msgs;
+
+import "std_msgs/header.proto";
+import "ais_msgs/ais_class.proto";
+import "ais_msgs/cargo_type.proto";
+import "ais_msgs/ship_type.proto";
+import "ais_msgs/position_fix_type.proto";
+
+/// Types 5 and 24: Ship static voyage related data, and boat static data
+/// report.
+message VesselStaticData {
+  std_msgs.Header header = 1;
+
+  /// True if the data is about own vessel, false if about other vessel.
+  bool own_vessel = 2;
+
+  /// Class A or Class B
+  AisClass ais_type = 3;
+
+  /// User ID (30 bits)
+  uint32 mmsi = 4;
+
+  /// AIS version indicator (2 bits)
+  uint32 ais_version_indicator = 5;
+
+  /// IMO number (1-999999999; 30 bits).
+  uint32 imo_number = 6;
+
+  /// Call sign (7 ASCII characters)
+  string call_sign = 7;
+
+  /// Name (20 ASCII characters)
+  string name = 8;
+
+  /// Type of ship (first 4 of 8 bits)
+  ShipType ship_type = 9;
+
+  /// Type of ship and cargo (last 4 of 8 bits)
+  CargoType cargo_type = 10;
+
+  /// Class B Vendor ID
+  string equipment_vendor_id = 11;
+
+  /// Class B unite model code
+  uint32 equipment_model = 12;
+
+  /// Class B serial number
+  uint32 equipment_serial_number = 13;
+
+  /// Overall dimension / reference for position A (9 bits)
+  uint32 dimension_to_bow = 14;
+  /// Overall dimension / reference for position B (9 bits)
+  uint32 dimension_to_stern = 15;
+  /// Overall dimension / reference for position C (6 bits)
+  uint32 dimension_to_port = 16;
+  /// Overall dimension / reference for position C (6 bits)
+  uint32 dimension_to_starboard = 17;
+
+  // Type of electronic position fixing device.
+  PositionFixType position_fix_type = 18;
+
+  /// ETA (20 bits)
+  uint64 eta = 19;
+
+  /// Maximum present static draught in decimetres (1-255; 8 bits)
+  uint32 draught10 = 20;
+
+  /// Destination (120 ASCII characters)
+  string destination = 21;
+
+  /// Class B mothership MMSI
+  uint32 mothership_mmsi = 22;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package geometry_msgs;
+
+import "std_msgs/header.proto";
+import "geometry_msgs/accel_with_covariance.proto";
+
+// This represents an estimated accel with reference coordinate frame and
+// timestamp.
+message AccelWithCovarianceStamped {
+  std_msgs.Header header = 1;
+  AccelWithCovariance accel = 2;
+}

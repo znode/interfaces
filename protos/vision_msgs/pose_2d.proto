@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package vision_msgs;
+
+import "vision_msgs/point_2d.proto";
+
+// Represents a 2D pose (coordinates and a radian rotation). Rotation is
+// positive counterclockwise.
+
+message Pose2D {
+  Point2D position = 1;
+  double theta = 2;
+}

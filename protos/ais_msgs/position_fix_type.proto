@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ais_msgs;
+
+/// EPFD position fix types
+enum PositionFixType {
+  PFT_Undefined = 0;                  // 0
+  PFT_GPS = 1;                        // 1
+  PFT_GLONASS = 2;                    // 2
+  PFT_GPSGLONASS = 3;                 // 3
+  PFT_LoranC = 4;                     // 4
+  PFT_Chayka = 5;                     // 5
+  PFT_IntegratedNavigationSystem = 6; // 6
+  PFT_Surveyed = 7;                   // 7
+  PFT_Galileo = 8;                    // 8
+}

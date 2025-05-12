@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package geometry_msgs;
+
+import "std_msgs/header.proto";
+import "geometry_msgs/vector3.proto";
+
+message Vector3Stamped {
+  std_msgs.Header header = 1;
+  Vector3 vector = 2;
+}

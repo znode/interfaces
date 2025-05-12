@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package vision_msgs;
+
+import "geometry_msgs/pose_with_covariance.proto";
+import "vision_msgs/object_hypothesis.proto";
+
+// An object hypothesis that contains pose information.
+// If you would like to define an array of ObjectHypothesisWithPose messages,
+//   please see the Detection2D or Detection3D message types.
+
+message ObjectHypothesisWithPose {
+  // The object hypothesis (ID and score).
+  ObjectHypothesis hypothesis = 1;
+
+  // The 6D pose of the object hypothesis. This pose should be
+  //   defined as the pose of some fixed reference point on the object,
+  //   such as the geometric center of the bounding box, the center of
+  //   mass of the object or the origin of a reference mesh of the
+  //   object.
+  // Note that this pose is not stamped; frame information can be
+  // defined by
+  //   parent messages.
+  // Also note that different classes predicted for the same input data
+  // may have
+  //   different predicted 6D poses.
+  geometry_msgs.PoseWithCovariance pose = 2;
+}

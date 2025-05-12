@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package sensor_msgs;
+
+import "sensor_msgs/joy_feedback.proto";
+
+// This message publishes values for multiple feedback at once.
+message JoyFeedbackArray { repeated JoyFeedback array = 1; }

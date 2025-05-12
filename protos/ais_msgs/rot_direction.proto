@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ais_msgs;
+
+/// Vessel rotation direction
+enum RotDirection {
+  /// Turning port (left, when seen by an observer aboard the vessel looking
+  /// forward)
+  RD_Port = 0;
+
+  /// Not turning
+  RD_Center = 1;
+
+  /// Turning starboard (right, when seen by an observer aboard the vessel
+  /// looking forward)
+  RD_Starboard = 2;
+}

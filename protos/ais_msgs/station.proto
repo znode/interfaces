@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ais_msgs;
+
+/// AIS station based on talker id
+enum Station {
+  S_BaseStation = 0;             // !AB
+  S_DependentAisBaseStation = 1; // !AD
+  S_MobileStation = 2;           // !AI (the most common one)
+  S_AidToNavigationStation = 3;  // !AN
+  S_AisReceivingStation = 4;     // !AR
+  S_LimitedBaseStation = 5;      // !AS
+  S_AisTransmittingStation = 6;  // !AT
+  S_RepeaterStation = 7;         // !AX
+  S_Other = 8;                   // !BS, !SA, etc.
+}

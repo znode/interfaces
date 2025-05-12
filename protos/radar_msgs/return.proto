@@ -1,0 +1,22 @@
+// All variables below are relative to the radar's frame of reference.
+// This message is not meant to be used alone but as part of a stamped or array message.
+
+
+syntax = "proto3";
+
+package radar_msgs;
+
+message RadarReturn {
+  // Distance (m) from the sensor to the detected return.
+  float range = 1;
+  // Angle (in radians) in the azimuth plane between the sensor and the detected return.
+  // Positive angles are anticlockwise from the sensor and negative angles clockwise from the sensor as per REP-0103.
+  float azimuth =2;
+  // Angle (in radians) in the elevation plane between the sensor and the detected return.
+  // Negative angles are below the sensor. For 2D radar, this will be 0.
+  float elevation = 3;
+  // The doppler speed (m/s) of the return.
+  float doppler_velocity = 4;
+  // The amplitude of the return (dB).
+  float amplitude = 5;
+}

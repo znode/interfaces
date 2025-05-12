@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package grid_map_msgs;
+
+import "std_msgs/multi_array_layout.proto";
+
+message GridMapData {
+  // Grid map data.
+  std_msgs.MultiArrayLayout layout = 1; // specification of data layout
+  repeated float data = 2;              // array of data
+}

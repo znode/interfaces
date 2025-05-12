@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package std_msgs;
+
+message KeyValue {
+  // What to label this value when viewing.
+  string key = 1;
+  // A value to track over time.
+  string value = 2;
+}

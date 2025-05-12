@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package geometry_msgs;
+
+import "geometry_msgs/vector3.proto";
+
+// This represents force in free space, separated into its linear and angular
+// parts.
+message Wrench {
+  Vector3 force = 1;
+  Vector3 torque = 2;
+}

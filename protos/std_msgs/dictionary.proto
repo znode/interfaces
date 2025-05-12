@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package std_msgs;
+
+import "std_msgs/header.proto";
+import "std_msgs/key_value.proto";
+
+message Dictionary {
+  std_msgs.Header header = 1;
+  repeated KeyValue values = 2;
+}

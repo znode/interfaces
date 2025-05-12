@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package diagnostic_msgs;
+
+import "std_msgs/header.proto";
+import "diagnostic_msgs/diagnostic_status.proto";
+
+// This message is used to send diagnostic information about the state of the
+// robot.
+message DiagnosticArray {
+  // for timestamp
+  std_msgs.Header header = 1;
+
+  // an array of components being reported on
+  repeated DiagnosticStatus status = 2;
+}

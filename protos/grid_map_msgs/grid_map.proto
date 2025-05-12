@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package grid_map_msgs;
+
+import "grid_map_msgs/grid_map_info.proto";
+import "grid_map_msgs/grid_map_data.proto";
+
+message GridMap {
+  // Grid map header
+  GridMapInfo info = 1;
+
+  // Grid map layer names.
+  repeated string layers = 2;
+
+  // Grid map basic layer names (optional). The basic layers
+  // determine which layers from `layers` need to be valid
+  // in order for a cell of the grid map to be valid.
+  repeated string basic_layers = 3;
+
+  // Grid map data.
+  repeated GridMapData data = 4;
+
+  // Row start index (default 0).
+  uint32 outer_start_index = 5;
+
+  // Column start index (default 0).
+  uint32 inner_start_index = 6;
+}

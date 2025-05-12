@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package grid_map_msgs;
+
+import "std_msgs/header.proto";
+import "geometry_msgs/pose.proto";
+
+message GridMapInfo {
+  // Header (time and frame)
+  std_msgs.Header header = 1;
+
+  // Resolution of the grid [m/cell].
+  double resolution = 2;
+
+  // Length in x-direction [m].
+  double length_x = 3;
+
+  // Length in y-direction [m].
+  double length_y = 4;
+
+  // Pose of the grid map center in the frame defined in `header` [m].
+  geometry_msgs.Pose pose = 5;
+}

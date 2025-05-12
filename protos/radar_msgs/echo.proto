@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package radar_msgs;
+import "std_msgs/header.proto";
+import "radar_msgs/return.proto";
+
+// This message is a submessage of RadarSector and is not intended
+// to be used separately.
+
+message RadarEcho {
+  // Regularly spaced series of intensities from closest to farthest. Each array
+  // represents data from the same angle increment.
+  repeated float echoes = 1;
+}

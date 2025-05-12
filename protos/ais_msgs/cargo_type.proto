@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ais_msgs;
+
+/// Cargo type derived from combined ship and cargo type field
+enum CargoType {
+  CT_Placeholder = 0;         // x0
+  CT_Undefined = 10;          // x0
+  CT_HazardousCategoryA = 11; // x1
+  CT_HazardousCategoryB = 12; // x2
+  CT_HazardousCategoryC = 13; // x3
+  CT_HazardousCategoryD = 14; // x4
+  CT_Reserved5 = 15;          // x5
+  CT_Reserved6 = 16;          // x6
+  CT_Reserved7 = 17;          // x7
+  CT_Reserved8 = 18;          // x8
+  CT_Reserved9 = 19;          // x9
+}

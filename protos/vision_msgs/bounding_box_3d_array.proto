@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package vision_msgs;
+
+import "std_msgs/header.proto";
+import "vision_msgs/bounding_box_3d.proto";
+
+message BoundingBox3DArray {
+  std_msgs.Header header = 1;
+  repeated BoundingBox3D boxes = 2;
+}
